@@ -1,0 +1,38 @@
+Hi! Can you create a program using tuple that manages student records, including
+student names, exam scores, and final grades
+
+
+# Function to calculate final grade based on exam scores
+def calculate_final_grade(scores):
+    return sum(scores) / len(scores)  # Average of scores
+
+# Function to display student records
+def display_student_records(student_records):
+    print("Student Records:")
+    print(f"{'Name':<15} {'Scores':<30} {'Final Grade':<15}")
+    print("-" * 60)
+    for record in student_records:
+        name, scores = record
+        final_grade = calculate_final_grade(scores)
+        print(f"{name:<15} {str(scores):<30} {final_grade:<15.2f}")
+
+# Sample student records (name, scores as a tuple)
+students = [
+    ("Alice", (85, 90, 78)),
+    ("Bob", (88, 92, 80)),
+    ("Charlie", (70, 75, 80)),
+    ("David", (90, 95, 100)),
+]
+
+# Display the student records
+display_student_records(students)
+
+Student Records:
+Name           Scores                         Final Grade   
+------------------------------------------------------------
+Alice          (85, 90, 78)                  84.33         
+Bob            (88, 92, 80)                  86.67         
+Charlie        (70, 75, 80)                  75.00         
+David          (90, 95, 100)                 95.00         
+
+
