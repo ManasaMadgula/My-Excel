@@ -1,0 +1,15 @@
+1. Write a Python program and calculate the mean of the below dictionary. test_dict = {"A" : 6, "B" : 9, "C" : 5, "D" : 7, "E" : 4} Output: 6.2 
+
+# Given dictionary
+test_dict = {"A": 6, "B": 9, "C": 5, "D": 7, "E": 4}
+
+# Function to calculate the mean of dictionary values
+def calculate_mean(data):
+    total = sum(data.values())  # Sum of all values
+    count = len(data)            # Number of entries
+    mean = total / count         # Calculate mean
+    return mean
+
+# Calculate and print the mean
+mean_value = calculate_mean(test_dict)
+print(f"The mean of the dictionary values is: {mean_value}")

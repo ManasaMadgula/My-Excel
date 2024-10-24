@@ -1,0 +1,19 @@
+3. Write a Python program to find duplicate values from a list and display those. 
+
+# Function to find duplicate values in a list
+def find_duplicates(items):
+    seen = set()  # To keep track of seen items
+    duplicates = set()  # To store duplicates
+
+    for item in items:
+        if item in seen:
+            duplicates.add(item)  # Add to duplicates if already seen
+        else:
+            seen.add(item)  # Add to seen if not already present
+
+    return list(duplicates)  # Return duplicates as a list
+
+# Example usage
+my_list = [1, 2, 3, 4, 2, 5, 1, 6, 3]
+duplicates = find_duplicates(my_list)
+print(f"Duplicate values: {duplicates}")

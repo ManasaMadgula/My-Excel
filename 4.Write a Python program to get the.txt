@@ -1,0 +1,55 @@
+4.Write a Python program to get the key, value and item in a dictionary. 
+
+Input: 
+
+input_dict = {1: 10, 2: 20, 3:None, 4: 40, 5: None, 6: 60} 
+
+
+
+
+# Given dictionary
+input_dict = {1: 10, 2: 20, 3: None, 4: 40, 5: None, 6: 60}
+
+# Print keys
+print("Keys:")
+for key in input_dict.keys():
+    print(key)
+
+# Print values
+print("\nValues:")
+for value in input_dict.values():
+    print(value)
+
+# Print items (key-value pairs)
+print("\nItems:")
+for key, value in input_dict.items():
+    print(f"Key: {key}, Value: {value}")
+When you run this program, the output will display the keys, values (including None), and items in the dictionary as follows:
+
+yaml
+Copy code
+Keys:
+1
+2
+3
+4
+5
+6
+
+Values:
+10
+20
+None
+40
+None
+60
+
+Items:
+Key: 1, Value: 10
+Key: 2, Value: 20
+Key: 3, Value: None
+Key: 4, Value: 40
+Key: 5, Value: None
+Key: 6, Value: 60
+
+
