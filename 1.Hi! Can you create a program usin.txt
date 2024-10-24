@@ -1,0 +1,76 @@
+1.Hi! Can you create a program using a list which allows us to manage our to-do list
+interactively, including adding tasks, marking tasks as done, removing tasks, and
+viewing the current task. The tasks are stored in a list, where each task is represented
+as a list containing the task name and a boolean value indicating whether it's done or
+not.
+
+
+# To-Do List Management System
+
+def display_tasks(tasks):
+    print("\nCurrent To-Do List:")
+    if not tasks:
+        print("The to-do list is empty.")
+    else:
+        for index, (task, done) in enumerate(tasks):
+            status = "✓" if done else "✗"
+            print(f"{index + 1}. [{status}] {task}")
+
+def add_task(tasks):
+    task_name = input("Enter the task name: ")
+    tasks.append([task_name, False])  # Add task as not done
+    print(f"Added task: '{task_name}'.")
+
+def mark_task_done(tasks):
+    display_tasks(tasks)
+    try:
+        task_index = int(input("Enter the number of the task to mark as done: ")) - 1
+        if 0 <= task_index < len(tasks):
+            tasks[task_index][1] = True
+            print(f"Marked task '{tasks[task_index][0]}' as done.")
+        else:
+            print("Invalid task number.")
+    except ValueError:
+        print("Please enter a valid number.")
+
+def remove_task(tasks):
+    display_tasks(tasks)
+    try:
+        task_index = int(input("Enter the number of the task to remove: ")) - 1
+        if 0 <= task_index < len(tasks):
+            removed_task = tasks.pop(task_index)
+            print(f"Removed task: '{removed_task[0]}'.")
+        else:
+            print("Invalid task number.")
+    except ValueError:
+        print("Please enter a valid number.")
+
+def main():
+    tasks = []
+    
+    while True:
+        print("\nOptions:")
+        print("1. View Current Tasks")
+        print("2. Add Task")
+        print("3. Mark Task as Done")
+        print("4. Remove Task")
+        print("5. Quit")
+        
+        choice = input("Choose an option (1-5): ")
+        
+        if choice == '1':
+            display_tasks(tasks)
+        elif choice == '2':
+            add_task(tasks)
+        elif choice == '3':
+            mark_task_done(tasks)
+        elif choice == '4':
+            remove_task(tasks)
+        elif choice == '5':
+            print("Exiting the program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()

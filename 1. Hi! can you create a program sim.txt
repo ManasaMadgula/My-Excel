@@ -1,0 +1,70 @@
+1. Hi! can you create a program simple way to manage contacts using file I/O without
+using lists or dictionaries
+
+def add_contact(filename, contact):
+    """Add a new contact to the file."""
+    with open(filename, 'a') as file:
+        file.write(contact + '\n')
+    print(f"Added contact: {contact}")
+
+def view_contacts(filename):
+    """View all contacts in the file."""
+    try:
+        with open(filename, 'r') as file:
+            contacts = file.readlines()
+            if contacts:
+                print("\nContacts:")
+                for contact in contacts:
+                    print(contact.strip())
+            else:
+                print("No contacts found.")
+    except FileNotFoundError:
+        print("No contacts file found. Please add a contact first.")
+
+def delete_contact(filename, contact):
+    """Delete a contact from the file."""
+    try:
+        with open(filename, 'r') as file:
+            contacts = file.readlines()
+        with open(filename, 'w') as file:
+            found = False
+            for line in contacts:
+                if line.strip() != contact:
+                    file.write(line)
+                else:
+                    found = True
+            if found:
+                print(f"Deleted contact: {contact}")
+            else:
+                print(f"Contact '{contact}' not found.")
+    except FileNotFoundError:
+        print("No contacts file found. Please add a contact first.")
+
+def main():
+    filename = "contacts.txt"
+    
+    while True:
+        print("\nOptions:")
+        print("1. Add Contact")
+        print("2. View Contacts")
+        print("3. Delete Contact")
+        print("4. Quit")
+        
+        choice = input("Choose an option (1-4): ")
+        
+        if choice == '1':
+            contact = input("Enter contact name: ")
+            add_contact(filename, contact)
+        elif choice == '2':
+            view_contacts(filename)
+        elif choice == '3':
+            contact = input("Enter contact name to delete: ")
+            delete_contact(filename, contact)
+        elif choice == '4':
+            print("Exiting the program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
