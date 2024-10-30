@@ -1,0 +1,21 @@
+1. Calculate the multiplication and sum of two numbers 
+
+
+
+To calculate the multiplication and sum of two numbers, follow these steps:
+
+Multiplication: Multiply the two numbers together. 
+Multiplication
+=
+Number 1
+×
+Number 2
+Multiplication=Number 1×Number 2
+
+Sum: Add the two numbers together. 
+Sum
+=
+Number 1
++
+Number 2
+Sum=Number 1+Number 2

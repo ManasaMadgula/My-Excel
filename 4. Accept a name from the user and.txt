@@ -1,0 +1,21 @@
+4. Accept a name from the user and display that in lower case using lower() function
+
+
+
+
+You can accept a name from the user and display it in lowercase using the lower() function in Python. Here’s a simple example:
+
+python
+Copy code
+# Accept a name from the user
+name = input("Please enter your name: ")
+
+# Convert the name to lowercase
+lowercase_name = name.lower()
+
+# Display the name in lowercase
+print("Your name in lowercase is:", lowercase_name)
+Explanation:
+The input() function prompts the user to enter their name.
+The lower() method is called on the input string to convert it to lowercase.
+Finally, the lowercase name is printed to the console.

@@ -1,0 +1,33 @@
+3. Using max() and min() functions display the maximum and minimum of 5 random numbers. 
+
+
+
+
+You can use the built-in max() and min() functions in Python to find the maximum and minimum of five random numbers. Here’s an example that demonstrates this:
+
+python
+Copy code
+import random
+
+# Generate 5 random numbers
+random_numbers = [random.randint(1, 100) for _ in range(5)]
+
+# Calculate maximum and minimum
+maximum = max(random_numbers)
+minimum = min(random_numbers)
+
+# Display the results
+print("Random numbers:", random_numbers)
+print("Maximum number:", maximum)
+print("Minimum number:", minimum)
+Explanation:
+The random module is imported to generate random numbers.
+A list comprehension is used to create a list of 5 random integers between 1 and 100.
+The max() function finds the maximum number in the list, while min() finds the minimum.
+Finally, the random numbers, maximum, and minimum values are printed.
+
+
+
+
+
+

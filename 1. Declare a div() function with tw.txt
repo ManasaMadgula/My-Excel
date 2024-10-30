@@ -1,0 +1,24 @@
+1. Declare a div() function with two parameters. Then call the function and pass two numbers and display their division. 
+
+
+
+
+Here’s how you can declare a div() function in Python that takes two parameters, performs division, and then displays the result:
+
+python
+Copy code
+def div(a, b):
+    if b == 0:
+        return "Error: Division by zero is not allowed."
+    return a / b
+
+# Call the function and pass two numbers
+result = div(10, 2)
+print("The division result is:", result)
+In this example:
+
+The div() function takes two parameters, a and b.
+It checks if b is zero to prevent division by zero errors.
+If b is not zero, it returns the result of the division a / b.
+Finally, the function is called with the numbers 10 and 2, and the result is printed.
+You can change the numbers in the function call to test with different values!
